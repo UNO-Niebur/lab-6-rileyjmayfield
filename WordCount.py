@@ -5,7 +5,11 @@
 #Purpose:Develop understanding of slicing strings
 
 def main():
-  textFile = open("fish.txt", 'r')
+  try:
+    textFile = open("fish.txt", 'r')
+  except FileNotFoundError:
+    print("Error could not find file.")
+    return
   lineCount = 0
   wordCount = 0
   chCount = 0

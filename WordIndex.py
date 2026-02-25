@@ -4,7 +4,11 @@
 #Assignment:
 
 def main():
-  textFile = open("gettysberg.txt", 'r')
+  try:
+    textFile = open("gettysberg.txt", 'r')
+  except FileNotFoundError:
+    print("Error could not find file.")
+    return
   lineNumber = 0
   words = {} #create an empty dictionary
   
